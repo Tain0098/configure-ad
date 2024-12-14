@@ -35,22 +35,82 @@ This tutorial outlines the implementation of on-premises Active Directory within
 <img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-</p>
-<br />
+  
+Create a Resource Group in Azure (ex..Active Directory)
+  
+Create a Virtual Network and Subnet
+
+Search Virtual Network in Azure
+
+Click Create and put the resource group above
+
+Name Vnet something easy and you can remember, like(AD-Vnet)
+
+The region has to be all the same(Important)
+
+Click Create
+
+*
 
 <p>
 <img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-</p>
-<br />
+Create the Domain Controller VM (Windows Server 2022) named “DC-1”
+
+Follow the steps above till you get to "Image and Size"
+
+Image = Windows Server 2022
+
+Size = 2 or 4 vcpus
+
+Region = same as above
+
+Note down the Username/Password
+
+Check the "licensing" box
+
+Skip on Disk to Networking
+
+On Networking, in the Virtual Network section -> pick the Virtual Network that you created
+
+Sometimes the VN name doesn't show up, in that case, restart the page and the filling process again
+
+You can skip management to Create 
+
+This Virtual Machine will serve as the Domain Controller or the Head Computer 
+
+*
 
 <p>
 <img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-</p>
-<br />
+Create the Client VM (Windows 10) named “Client-1”
+
+Image = Windows 10 pro (don't mistake it)
+
+Size = 2 or 4 vcpus
+
+Note down the Username/Password
+
+Region = same as above
+
+Skip on Disk to Networking
+
+On Networking, in the Virtual Network section -> pick the Virtual Network that you created
+
+Sometimes the VN name doesn't show up, in that case, restart the page and the filling process again
+
+This will serve as a regular computer (like a radome computer you find in school or library that you can log in) 
+
+
+
+
+
+
+
+
+
+
+
