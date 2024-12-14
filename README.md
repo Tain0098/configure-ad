@@ -76,7 +76,7 @@ On Networking, in the Virtual Network section -> pick the Virtual Network that y
 
 Sometimes the VN name doesn't show up, in that case, restart the page and the filling process again
 
-You can skip management to Create 
+You can skip management to Create
 
 This Virtual Machine will serve as the Domain Controller or the Head Computer 
 
@@ -102,7 +102,82 @@ On Networking, in the Virtual Network section -> pick the Virtual Network that y
 
 Sometimes the VN name doesn't show up, in that case, restart the page and the filling process again
 
-This will serve as a regular computer (like a radome computer you find in school or library that you can log in) 
+This will serve as a regular computer (like a radome computer you find in school or library that you can log in)
+
+*
+Set Domain Controller’s NIC Private IP address to be static
+
+Steps to Set NIC Private IP Address to Static in Azure:
+Login to the Azure Portal:
+
+Open the Azure Portal.
+Navigate to the Virtual Machines section.
+Locate the Domain Controller VM:
+
+In the Azure portal, go to Virtual Machines.
+Search for and select the VM that is running your Domain Controller.
+Navigate to the Networking Settings:
+
+Once inside the VM's management page, scroll down and select Networking under the "Settings" section.
+Here you will see the list of network interfaces (NICs) associated with the VM.
+Select the Network Interface:
+
+Click on the NIC attached to the Domain Controller.
+This will take you to the NIC's configuration page.
+Configure the Private IP Address:
+
+In the NIC settings, under the IP configurations section, select the IP configuration that is currently assigned to the VM (usually named something like "ipconfig1").
+
+Set the IP Address to Static:
+
+Under the Private IP address settings, you will see an option for Assignment.
+
+Change this setting from Dynamic to Static.
+
+Select "Static"
+
+After entering the static IP address, click Save at the top of the page to apply the changes.
+
+*
+
+Steps to Set DNS to Domain Controller’s Private IP Address in Azure
+
+Login to Azure Portal
+Go to the Azure Portal.
+
+Locate the Virtual Machine
+In the Azure portal, go to Virtual Machines.
+Find and select the Windows 10 Pro VM for which you want to set the DNS to the Domain Controller’s IP.
+
+Identify the Domain Controller’s Private IP
+Next, locate the Domain Controller’s private IP address (if you don't know it already).
+Go to Virtual Machines in the Azure portal.
+Select the Domain Controller VM.
+Under Networking, you will see the Private IP Address of the Domain Controller's NIC.
+
+Modify DNS Settings on the Windows 10 VM's NIC
+Go to the Networking section for the Windows 10 Pro VM.
+Under the Network Interface section, click on the Network Interface name associated with the Windows 10 Pro VM.
+This takes you to the NIC's settings for that VM.
+
+Configure DNS Settings for the NIC
+In the Network Interface pane, under the IP configurations section, click on the IP configuration (usually named ipconfig1).
+In the IP configuration settings, scroll down to the DNS servers section.
+Set the DNS servers:
+
+Choose Custom for the DNS server settings.
+In the DNS servers section, enter the private IP address of the Domain Controller (which you identified in step 3).
+
+Example:
+DNS servers: 10.0.0.4 (Replace this with your Domain Controller's private IP address)
+
+Click Save
+
+From Client-1, open PowerShell and run ipconfig /all
+
+The output for the DNS settings should show DC-1’s private IP Address
+
+
 
 
 
