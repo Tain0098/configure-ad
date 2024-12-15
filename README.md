@@ -209,6 +209,14 @@ Install Active Directory
 
 Login to DC-1
 
+Search Remote Desktop on the Window Bar
+
+Type in DC-1 public IP address 
+
+Change to other users, then DC-1 username and password
+
+You in!
+
 Press Windows + R, type ServerManager, and press Enter to open the Server Manager.
 
 Click on Add Roles and Features.
